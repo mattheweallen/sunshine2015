@@ -27,6 +27,8 @@ public class ForecastFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //test
+
         String[] data = {
                 "Fri 1/30 - Partly Cloudy - 15/5",
                 "Sat 1/31 - Breezy - 25/8",
