@@ -75,7 +75,11 @@ public class ForecastFragment extends Fragment {
         // Handle item selection
         int id = item.getItemId();
 
+        Log.d("beforeonOption_meallen", "Debug G");
+
         if (id == R.id.action_refresh) {
+            Log.d("onOption_meallen", "Debug G");
+            new FetchWeatherTask().execute();
             return true;
         }
 
@@ -83,7 +87,7 @@ public class ForecastFragment extends Fragment {
 
     }
 
-    private class FetchWeatherTask extends AsyncTask<Void, Void, Void> {
+    public class FetchWeatherTask extends AsyncTask<Void, Void, Void> {
         private final String LOG_TAG = FetchWeatherTask.class.getSimpleName();
 
         protected Void doInBackground(Void... params) {
@@ -148,12 +152,13 @@ public class ForecastFragment extends Fragment {
                     try {
                         reader.close();
                     } catch (final IOException e) {
-                        Log.e("PlaceholderFragment", "Error closing stream", e);
+                        Log.e(LOG_TAG, "Error closing stream", e);
                     }
                 }
                 //return forecastJsonStr;
-                return null;
+
             }
+            return null;
         }
 
     }
